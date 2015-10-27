@@ -11,10 +11,6 @@ namespace TheWastesClone
 	{
 		static void Main(string[] args)
 		{
-			int result = ConsoleInput.ReadInt();
-			Console.WriteLine("");
-			Console.WriteLine(result);
-			Console.ReadKey(true);
 		}
 	}
 }
