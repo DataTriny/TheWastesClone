@@ -22,8 +22,9 @@ namespace TheWastesClone.UI
 			Console.Clear();
 			for (int i = 0; i < Items.Count; i++)
 				Items[i].OnDraw(this, i + 1);
+			Console.Write(Input.Text);
+			Input.MoveCursor();
 			Input.Update();
-			Console.Beep(50, 50);
 		}
 	}
 }
