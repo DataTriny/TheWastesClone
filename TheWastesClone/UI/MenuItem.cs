@@ -28,6 +28,8 @@ namespace TheWastesClone.UI
 		{
 			if (Draw != null)
 				Draw(sender, itemIndex);
+			else
+				Console.WriteLine(itemIndex.ToString() + ") " + Title);
 		}
 
 		public void OnValidate(object sender)

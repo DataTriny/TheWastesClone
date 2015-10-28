@@ -12,9 +12,18 @@ namespace TheWastesClone.UI
 		public int SelectedItem { get; protected set; }
 		public string Title { get; protected set; }
 
+		public Menu()
+		{
+			Items = new List<MenuItem>();
+		}
+
 		public override void Update()
 		{
-			
+			Console.Clear();
+			for (int i = 0; i < Items.Count; i++)
+				Items[i].OnDraw(this, i + 1);
+			Input.Update();
+			Console.Beep(50, 50);
 		}
 	}
 }
