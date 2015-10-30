@@ -9,9 +9,9 @@ namespace TheWastesClone.Utils
 	class ConsoleInput
 	{
 		private int cursorPos = 0;
-		public event EventHandler<string> InputReceived;
 		public event EventHandler<ConsoleKeyInfo> KeyPress;
 		public string Text { get; set; }
+		public event EventHandler<string> TextEntered;
 
 		public ConsoleInput()
 		{
@@ -44,8 +44,8 @@ namespace TheWastesClone.Utils
             }
 			else if (keyInfo.Key == ConsoleKey.Enter)
 			{
-				if (InputReceived != null)
-					InputReceived(this, Text);
+				if (TextEntered != null)
+					TextEntered(this, Text);
 				Text = string.Empty;
 				cursorPos = 0;
 			}

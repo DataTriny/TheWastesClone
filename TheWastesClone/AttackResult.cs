@@ -3,16 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TheWastesClone.UI.Menus;
 
 namespace TheWastesClone
 {
-	class Program
+	class AttackResult
 	{
-		static void Main(string[] args)
-		{
-			MainMenu menu = new MainMenu();
-			menu.Open();
-		}
+		public bool Critical { get; set; }
+		public int Damage { get; set; }
+		public bool Miss { get; set; }
 	}
 }

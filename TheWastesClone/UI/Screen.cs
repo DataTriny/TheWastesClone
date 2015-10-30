@@ -15,11 +15,21 @@ namespace TheWastesClone.UI
 		public Screen()
 		{
 			Input = new Utils.ConsoleInput();
+			Input.KeyPress += OnKeyPress;
+			Input.TextEntered += OnTextEntered;
 		}
 
 		public void Close()
 		{
 			isOpen = false;
+		}
+
+		protected virtual void OnKeyPress(object sender, ConsoleKeyInfo keyInfo)
+		{
+		}
+
+		protected virtual void OnTextEntered(object sender, string text)
+		{
 		}
 
 		public void Open()
