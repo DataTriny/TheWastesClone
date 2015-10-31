@@ -35,7 +35,7 @@ namespace TheWastesClone.UI
 		public void Open()
 		{
 			isOpen = true;
-			while (isOpen)
+			while (!Program.Exitting && isOpen)
 			{
 				Update();
 			}

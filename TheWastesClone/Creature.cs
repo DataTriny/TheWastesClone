@@ -3,22 +3,26 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TheWastesClone.Items;
 
 namespace TheWastesClone
 {
 	class Creature
 	{
 		public int HP { get; set; }
+		public List<Item> Inventory { get; private set; }
 		public bool IsDead { get; private set; }
 		public bool IsMutant { get; private set; }
 		public int Level { get; set; }
 		public double Money { get; set; }
+		public string Name { get; set; }
 		private Random rand = new Random(System.Environment.TickCount);
 		public Skills Skills { get; private set; }
 		public int XP { get; set; }
 
 		public Creature()
 		{
+			Inventory = new List<Item>();
 			Skills = new Skills();
 		}
 

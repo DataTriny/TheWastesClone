@@ -16,7 +16,10 @@ namespace TheWastesClone.UI.Menus
 				Close();
 			}));
 			Items.Add(new MenuItem("Load a saved game"));
-			Items.Add(new MenuItem("Options"));
+			Items.Add(new MenuItem("Options", (sender, e) =>
+			{
+				new OptionsMenu().Open();
+			}));
 			Items.Add(new MenuItem("Credits", (sender, e) =>
 			{
 				new Dialog("The Wastes Clone (version 0.1)\nCreated by DataTriny\nBased on the original game by Huw Millward").Open();

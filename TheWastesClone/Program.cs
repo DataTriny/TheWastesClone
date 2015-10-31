@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,10 +10,21 @@ namespace TheWastesClone
 {
 	class Program
 	{
+		public static bool Exitting { get; set; }
+
 		static void Main(string[] args)
 		{
-			MainMenu menu = new MainMenu();
-			menu.Open();
+			if (File.Exists("Updater.exe"))
+			{
+				try
+				{
+					File.Delete("Updater.exe");
+				}
+				catch
+				{
+				}
+			}
+			new MainMenu().Open();
 		}
 	}
 }
