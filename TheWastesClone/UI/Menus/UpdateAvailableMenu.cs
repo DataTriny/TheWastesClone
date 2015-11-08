@@ -24,7 +24,7 @@ namespace TheWastesClone.UI.Menus
 					process.Start();
 					Program.Exitting = true;
 				}
-				catch (Exception ex)
+				catch
 				{
 					new Dialog("Unable to download update.\nPlease retry later.").Open();
 					Close();

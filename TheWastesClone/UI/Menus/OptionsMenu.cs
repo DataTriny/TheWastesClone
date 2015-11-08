@@ -12,6 +12,10 @@ namespace TheWastesClone.UI.Menus
 	{
 		public OptionsMenu()
 		{
+			Items.Add(new MenuItem("Music settings", (sender, e) =>
+			{
+				new MusicSettingsMenu().Open();
+			}));
 			Items.Add(new MenuItem("Check for update", (sender, e) =>
 			{
 				WebClient client = new WebClient();
@@ -31,6 +35,12 @@ namespace TheWastesClone.UI.Menus
 					new Dialog("Unable to check for update.\nPlease retry later.").Open();
 				}
 			}));
+		}
+
+		protected override void OnDraw(object sender, EventArgs e)
+		{
+			base.OnDraw(sender, e);
+			Console.WriteLine(GetLine());
 		}
 	}
 }

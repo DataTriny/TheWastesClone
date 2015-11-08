@@ -29,5 +29,11 @@ namespace TheWastesClone.UI.Menus
 				Close();
 			}));
 		}
+
+		protected override void OnOpen(object sender, EventArgs e)
+		{
+			Program.SoundEngine.Play2D(@"Content\Musics\menu.wav", true);
+			base.OnOpen(sender, e);
+		}
 	}
 }

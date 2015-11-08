@@ -17,6 +17,13 @@ namespace TheWastesClone.UI
 			Items = new List<MenuItem>();
 		}
 
+		protected override void OnDraw(object sender, EventArgs e)
+		{
+			for (int i = 0; i < Items.Count; i++)
+				Items[i].OnDraw(this, i + 1);
+			base.OnDraw(sender, e);
+		}
+
 		protected override void OnTextEntered(object sender, string text)
 		{
 			int selectedItem = 0;
@@ -32,10 +39,11 @@ namespace TheWastesClone.UI
 		public override void Update()
 		{
 			Console.Clear();
-			for (int i = 0; i < Items.Count; i++)
-				Items[i].OnDraw(this, i + 1);
+			OnDraw(this, new EventArgs());
+			Console.ForegroundColor = ConsoleColor.Red;
 			if (!string.IsNullOrWhiteSpace(Error))
 				Console.WriteLine("\n" + Error);
+			Console.ForegroundColor = ConsoleColor.White;
 			Console.Write("\n" + Input.Text);
 			Input.MoveCursor();
 			Input.Update();
