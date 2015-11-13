@@ -88,6 +88,8 @@
     <Compile Include="UI\Menus\UpdateAvailableMenu.cs" />
     <Compile Include="UI\Screen.cs" />
     <Compile Include="Utils\ConsoleInput.cs" />
+    <Compile Include="Utils\ProportionValue.cs" />
+    <Compile Include="Utils\ProportionCollection.cs" />
     <Compile Include="Utils\Settings.cs" />
   </ItemGroup>
   <ItemGroup>
